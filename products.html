@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OPTIMA - قائمة المنتجات</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>قائمة المنتجات</h1>
+    <a href="index.html"> رجوع إلى البحث</a>
+  </header>
+
+  <main id="product-list" class="grid"></main>
+
+  <script>
+    // بيانات تجريبية (placeholder)
+    const products = [
+      { name: "iPhone 14", price: "3500 SAR", img: "https://via.placeholder.com/150" },
+      { name: "Samsung S23", price: "3200 SAR", img: "https://via.placeholder.com/150" },
+      { name: "Xiaomi 13", price: "2100 SAR", img: "https://via.placeholder.com/150" },
+      { name: "Huawei P60", price: "2800 SAR", img: "https://via.placeholder.com/150" },
+    ];
+
+    const list = document.getElementById("product-list");
+    list.innerHTML = products.map(p => `
+      <div class="card">
+        <img src="${p.img}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p>${p.price}</p>
+        <button>مقارنة</button>
+      </div>
+    `).join('');
+  </script>
+
+</body>
+</html>
+
