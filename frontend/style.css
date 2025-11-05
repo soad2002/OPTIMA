@@ -1,0 +1,33 @@
+body {
+  font-family: "Tajawal", sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background-color: #1e88e5;
+  color: white;
+  padding: 20px;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  width: 250px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #43a047;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#product-list {
+  margin: 30px;
+}
+
