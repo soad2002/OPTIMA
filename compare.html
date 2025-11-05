@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OPTIMA - مقارنة المنتجات</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>صفحة مقارنة المنتجات</h1>
+    <a href="products.html"> رجوع إلى قائمة المنتجات</a>
+  </header>
+
+  <main id="compare-section">
+    <!-- سيتم ملء المقارنة هنا -->
+  </main>
+
+  <script>
+    // بيانات مؤقتة (نماذج للمقارنة)
+    const compareData = [
+      {
+        name: "iPhone 14",
+        price: "3500 SAR",
+        img: "https://via.placeholder.com/150",
+        specs: {
+          RAM: "6 GB",
+          Storage: "128 GB",
+          Screen: "6.1 inch"
+        }
+      },
+      {
+        name: "Samsung S23",
+        price: "3200 SAR",
+        img: "https://via.placeholder.com/150",
+        specs: {
+          RAM: "8 GB",
+          Storage: "256 GB",
+          Screen: "6.3 inch"
+        }
+      }
+    ];
+
+    // عرض المنتجات في جدول المقارنة
+    const container = document.getElementById("compare-section");
+    container.innerHTML = `
+      <div class="compare-grid">
+        ${compareData.map(p => `
+          <div class="card">
+            <img src="${p.img}" alt="${p.name}">
+            <h3>${p.name}</h3>
+            <p><b>السعر:</b> ${p.price}</p>
+            <ul>
+              <li><b>RAM:</b> ${p.specs.RAM}</li>
+              <li><b>Storage:</b> ${p.specs.Storage}</li>
+              <li><b>Screen:</b> ${p.specs.Screen}</li>
+            </ul>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  </script>
+
+</body>
+</html>
+
