@@ -9,7 +9,7 @@
 <body>
 
   <header>
-    <h1>قائمة المنتجات</h1>
+    <h1 id="page-title">قائمة المنتجات</h1>
     <a href="index.html"> رجوع إلى البحث</a>
   </header>
 
@@ -30,7 +30,7 @@
         <img src="${p.img}" alt="${p.name}">
         <h3>${p.name}</h3>
         <p>${p.price}</p>
-        <button>مقارنة</button>
+        <button onclick="window.location.href='compare.html'">مقارنة</button>
       </div>
     `).join('');
   </script>

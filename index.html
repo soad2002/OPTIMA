@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OPTIMA - مقارنة الأسعار</title>
+  <title>OPTIMA - البحث</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,11 +14,17 @@
     <button onclick="searchProducts()">بحث</button>
   </header>
 
-  <main id="product-list">
-    <!-- سيتم عرض المنتجات هنا -->
-  </main>
+  <script>
+    function searchProducts() {
+      const query = document.getElementById("search").value.trim();
+      if (query) {
+        // نحفظ كلمة البحث في الرابط
+        window.location.href = `products.html?search=${encodeURIComponent(query)}`;
+      } else {
+        alert("يرجى كتابة اسم المنتج أولاً 🔍");
+      }
+    }
+  </script>
 
-  <script src="script.js"></script>
 </body>
 </html>
-
