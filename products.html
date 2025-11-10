@@ -16,25 +16,47 @@
   <main id="product-list" class="grid"></main>
 
   <script>
-    // بيانات تجريبية (placeholder)
-    const products = [
-      { name: "iPhone 14", price: "3500 SAR", img: "https://via.placeholder.com/150" },
-      { name: "Samsung S23", price: "3200 SAR", img: "https://via.placeholder.com/150" },
-      { name: "Xiaomi 13", price: "2100 SAR", img: "https://via.placeholder.com/150" },
-      { name: "Huawei P60", price: "2800 SAR", img: "https://via.placeholder.com/150" },
-    ];
+  // قراءة كلمة البحث من الرابط
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get("search");
 
-    const list = document.getElementById("product-list");
-    list.innerHTML = products.map(p => `
-      <div class="card">
-        <img src="${p.img}" alt="${p.name}">
-        <h3>${p.name}</h3>
-        <p>${p.price}</p>
-        <button onclick="window.location.href='compare.html'">مقارنة</button>
-      </div>
-    `).join('');
-  </script>
+  if (query) {
+    document.getElementById("page-title").innerHTML = `نتائج البحث عن: ${query}`;
+  }
 
+  const list = document.getElementById("product-list");
+
+  // دالة لجلب المنتجات من API
+  async function getProducts() {
+    try {
+      // رابط تجريبي حالياً (نبدله لاحقاً برابط الباك الحقيقي)
+      const apiUrl = `https://fakestoreapi.com/products`;
+
+
+      // جلب البيانات
+      const response = await fetch(apiUrl);
+      const products = await response.json();
+
+      // عرض النتائج في الصفحة
+      list.innerHTML = products.map(p => `
+        <div class="card">
+          <img src="${p.image}" alt="${p.name}">
+          <h3>${p.name}</h3>
+          <p>${p.price} SAR</p>
+          <p>المتجر: ${p.store}</p>
+          <a href="${p.url}" target="_blank">زيارة المتجر</a>
+          <button onclick="window.location.href='compare.html'">مقارنة</button>
+        </div>
+      `).join('');
+    } catch (error) {
+      list.innerHTML = `<p style="color:red;">حدث خطأ أثناء تحميل البيانات 🔴</p>`;
+      console.error(error);
+    }
+  }
+
+  // استدعاء الدالة عند تحميل الصفحة
+  getProducts();
+</script>
 </body>
 </html>
 
