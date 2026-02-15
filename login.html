@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPTIMA - Login</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/slick.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/slick-theme.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/nouislider.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/style.css">
+
+    </head>
+<body>
+
+    <!-- Header -->
+    <!-- HEADER -->
+<header>
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <!-- LOGO -->
+                <div class="col-md-3">
+                    <div class="header-logo">
+                        <a href="http://127.0.0.1:8000" class="logo">
+                            <img src="http://127.0.0.1:8000/img/shop01.png" alt="OPTIMA" style="max-height: 70px ; max-width :70px">
+                        </a>
+                    </div>
+                </div>
+                <!-- SEARCH BAR -->
+                <div class="col-md-5">
+                    <div class="header-search">
+                        <form id="searchForm">
+                            <select class="input-select" id="categorySelect">
+                                <option value="0">All Categories</option>
+                                <option value="laptops">Laptops</option>
+                                <option value="smartphones">Smartphones</option>
+                                <option value="cameras">Cameras</option>
+                                <option value="accessories">Accessories</option>
+                            </select>
+                            <input class="input" id="searchInput" placeholder="Search products...">
+                            <button type="submit" class="search-btn">Search</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4 clearfix">
+                    <div class="header-ctn">
+                        <!-- Wishlist -->
+                        <div>
+                            <a href="http://127.0.0.1:8000/wishlist" id="wishlist-link">
+                                <i class="fa fa-heart-o"></i>
+                                <span>My Wishlist</span>
+                                <div class="qty" id="wishlist-count">0</div>
+                            </a>
+                        </div>
+                        <!-- Account / Auth -->
+                        <div>
+                                                            <a href="http://127.0.0.1:8000/login" id="login-link">
+                                    <i class="fa fa-sign-in"></i>
+                                    <span>Sign In</span>
+                                </a>
+                                                    </div>
+                        <!-- Cart -->
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" href="http://127.0.0.1:8000/cart">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span>My Cart</span>
+                                <div class="qty" id="cart-count">0</div>
+                            </a>
+                            <div class="cart-dropdown">
+                                <div class="cart-list" id="cart-dropdown-items">
+                                    <!-- محتويات السلة تظهر هنا -->
+                                    <div class="empty-cart-message" style="padding: 20px; text-align: center;">
+                                        Your cart is empty
+                                    </div>
+                                </div>
+                                <div class="cart-summary">
+                                    <small id="cart-summary-count">0 Item(s)</small>
+                                    <h5 id="cart-summary-total">SUBTOTAL: $0.00</h5>
+                                </div>
+                                <div class="cart-btns">
+                                    <a href="http://127.0.0.1:8000/cart">View Cart</a>
+                                    <a href="http://127.0.0.1:8000/checkout">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav id="navigation">
+    <div class="container">
+        <div id="responsive-nav">
+            <ul class="main-nav nav navbar-nav">
+                <li class="active"><a href="http://127.0.0.1:8000">Home</a></li>
+                <li><a href="http://127.0.0.1:8000/hot-deals">Hot Deals</a></li>
+                <li><a href="http://127.0.0.1:8000/laptops">Laptops</a></li>
+                <li><a href="http://127.0.0.1:8000/smartphones">Smartphones</a></li>
+                <li><a href="http://127.0.0.1:8000/cameras">Cameras</a></li>
+                <li><a href="http://127.0.0.1:8000/accessories">Accessories</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h3 class="panel-title">Login to your account</h3></div>
+                    <div class="panel-body">
+                        
+                        <form method="POST" action="http://127.0.0.1:8000/login">
+                            <input type="hidden" name="_token" value="Hj6gHqM7JuWTXntQkUWvj82h5EszbcKPV6nRuYXR" autocomplete="off">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input id="password" type="password" class="form-control" name="password" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label><input type="checkbox" name="remember"> Remember me</label>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="primary-btn">Login</button>
+                                <a href="http://127.0.0.1:8000" class="btn btn-link">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <!-- Footer -->
+    <!-- FOOTER -->
+<footer id="footer">
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">About Us</h3>
+                        <p>The leading technical destination connecting customers with lastest global electronic innovations, at affordable prices and exceptional service.</p>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fa fa-map-marker"></i>Damascus - Syria</a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i>+963912323455</a></li>
+                            <li><a href="#"><i class="fa fa-envelope-o"></i>OPTIMA@Email.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">Categories</h3>
+                        <ul class="footer-links">
+                            <li><a href="http://127.0.0.1:8000/laptops">Laptops</a></li>
+                            <li><a href="http://127.0.0.1:8000/smartphones">Smartphones</a></li>
+                            <li><a href="http://127.0.0.1:8000/cameras">Cameras</a></li>
+                            <li><a href="http://127.0.0.1:8000/accessories">Accessories</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="clearfix visible-xs"></div>
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">Information</h3>
+                        <ul class="footer-links">
+                            <li><a href="http://127.0.0.1:8000/about">About Us</a></li>
+                            <li><a href="http://127.0.0.1:8000/contact">Contact Us</a></li>
+                            <li><a href="http://127.0.0.1:8000/privacy">Privacy Policy</a></li>
+                            <li><a href="http://127.0.0.1:8000/returns">Orders and Returns</a></li>
+                            <li><a href="http://127.0.0.1:8000/terms">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">Customer Services</h3>
+                        <ul class="footer-links">
+                            <li><a href="http://127.0.0.1:8000/account">My Account</a></li>
+                            <li><a href="http://127.0.0.1:8000/cart">View Cart</a></li>
+                            <li><a href="http://127.0.0.1:8000/wishlist">Wishlist</a></li>
+                            <li><a href="http://127.0.0.1:8000/track-order">Track My Order</a></li>
+                            <li><a href="http://127.0.0.1:8000/help">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom-footer" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <span class="copyright">
+                        Copyright &copy; 2026 OPTIMA Team . All rights reserved.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- JS -->
+    <script src="http://127.0.0.1:8000/js/jquery.min.js"></script>
+    <script src="http://127.0.0.1:8000/js/jquery.zoom.min.js"></script>
+    <script src="http://127.0.0.1:8000/js/bootstrap.min.js"></script>
+    <script src="http://127.0.0.1:8000/js/slick.min.js"></script>
+    <script src="http://127.0.0.1:8000/js/nouislider.min.js"></script>
+    <script src="http://127.0.0.1:8000/js/main.js"></script>
+
+            <script>
+        window.App = {
+            csrfToken: 'Hj6gHqM7JuWTXntQkUWvj82h5EszbcKPV6nRuYXR',
+            user: null
+        };
+    </script>
+</body>
+</html>
